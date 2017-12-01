@@ -15,7 +15,7 @@ termux_step_make_install() {
 	
 	local target_lib=$TERMUX_PREFIX/lib
 	
-	cp -rp $TERMUX_PKG_BUILDER_DIR/$URL_ARCH $target_lib/
+	cp -rp $TERMUX_PKG_BUILDER_DIR/$URL_ARCH $target_lib/xorg-neoterm
 }
 
 
