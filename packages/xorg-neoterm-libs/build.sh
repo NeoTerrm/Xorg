@@ -18,7 +18,8 @@ termux_step_make_install() {
 	
 	local my_dir=$TERMUX_PKG_BUILDER_DIR/$URL_ARCH
 	
-	cp -rp $my_dir/lib $target_lib/xorg-neoterm
+	mkdir -p $target_lib/xorg-neoterm
+	cp -rp $my_dir/lib/* $target_lib/xorg-neoterm/
 	
 	cp -rp $my_dir/bin/{xhost,xkbcomp,xli,xsel} $target_bin/
 	
