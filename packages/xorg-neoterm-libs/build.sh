@@ -14,8 +14,15 @@ termux_step_make_install() {
 	esac
 	
 	local target_lib=$TERMUX_PREFIX/lib
+	local target_bin=$TERMUX_PREFIX/bin
 	
-	cp -rp $TERMUX_PKG_BUILDER_DIR/$URL_ARCH $target_lib/xorg-neoterm
+	local my_dir=$TERMUX_PKG_BUILDER_DIR/$URL_ARCH
+	
+	cp -rp $my_dir/lib $target_lib/xorg-neoterm
+	
+	cp -rp $my_dir/bin/{xhost,xkbcomp,xli,xsel} $target_bin/
+	
+	chmod 700 $target_bin/{xhost,xkbcomp,xli,xsel}
 }
 
 
